@@ -1,13 +1,9 @@
 #!/usr/bin/python3
+""" task 1: Defines an inherited list class """
+
 
 class MyList(list):
-    """
-    A class that inherits from list and provides a method to print the list in sorted order.
-    """
+    """Implements sorted printing for the built-in list class."""
 
     def print_sorted(self):
-        """
-        Prints the list in ascending order.
-        """
-        sorted_list = sorted(self)
-        print(sorted_list)
+        print(sorted(self))
