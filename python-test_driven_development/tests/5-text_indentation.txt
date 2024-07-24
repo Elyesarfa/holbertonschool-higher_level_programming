@@ -1,0 +1,24 @@
+#import function
+
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+#test code with some examples:
+>>> try:
+...     text_indentation(True)
+... except Exception as e:
+...     print(e)
+text must be a string
+
+>>> try:
+...     text_indentation(123)
+... except Exception as e:
+...     print(e)
+text must be a string
+
+#test failed
+>>> text_indentation("Hello world?my name is rania:i'm from tunisia.")
+Hello world?
+
+my name is rania:
+
+i'm from tunisia.
