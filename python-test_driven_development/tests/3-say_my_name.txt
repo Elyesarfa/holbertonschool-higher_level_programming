@@ -1,35 +1,53 @@
-#import function
+# The ``3-say_my_name`` module
+============================================
+How to use 3-say_my_name.py
+============================================
 
->>> say_my_name = __import__('3-say_my_name').say_my_name
+This library has one function called ``say_my_name()``
 
-#test function with some examples:
+``say_my_name()`` prints a person's first name and last name.
 
->>> say_my_name("John", "Smith")
-My name is John Smith
+Importing the function say_my_name.
+    >>> say_my_name = __import__('3-say_my_name').say_my_name
 
->>> say_my_name("Walter", "White")
-My name is Walter White
+Passing first_name and last_name correctly.
+    >>> say_my_name("Wendy", "Munyasi")
+    My name is Wendy Munyasi
 
->>> say_my_name("Bob")
-My name is Bob 
+    >> say_my_name("Breezy")
+    My name is Breezy
 
->>> try:
-...     say_my_name(12, "White")
-... except Exception as e:
-...     print(e)
-first_name must be a string
+Passing last_name as None.
+    >>> say_my_name("Wendy", None)
+    Traceback (most recent call last):
+        ...
+    TypeError: last_name must be a string
 
->>> try:
-...     say_my_name("rania", False)
-... except Exception as e:
-...     print(e)
-last_name must be a string
+Passing first_name and last_name as None.
+    >>> say_my_name(None, None)
+    Traceback (most recent call last):
+        ...
+    TypeError: first_name must be a string
 
->>> try:
-...     say_my_name("rania", -1)
-... except Exception as e:
-...     print(e)
-last_name must be a string
+Passing first name as None.
+    >>> say_my_name(None, "Breezy")
+    Traceback (most recent call last):
+        ...
+    TypeError: first_name must be a string
 
->>> say_my_name("", "")
-My name is
+Passing wrong types as first_name and last_name
+    >>> say_my_name(1, "Breezy")
+    Traceback (most recent call last):
+        ...
+    TypeError: first_name must be a string
+
+    >>> say_my_name("Chris", [4])
+    Traceback (most recent call last):
+        ...
+    TypeError: last_name must be a string
+
+Passing more than two arguments to say_my_name().
+    >>> say_my_name("Chris", "Breezy", "Brown") #doctest: +ELLIPSIS
+    Traceback (most recent call last):
+        ...
+    TypeError: say_my_name() takes from 1 to 2 positional arguments but ...
