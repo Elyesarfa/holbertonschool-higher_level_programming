@@ -1,8 +1,10 @@
 #!/usr/bin/python3
-""" write a function that adds 2 integers"""
+"""Defines a function add_integer(a, b=98) that adds two integers.
+
+"""
 
 
- def add_integer(a, b=98):
+def add_integer(a, b=98):
     """Adds two integer and/or float values.
 
     """
