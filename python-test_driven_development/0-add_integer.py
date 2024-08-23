@@ -7,4 +7,3 @@ if not isinstance(a, (int, float)):
     if not isinstance(b, (int, float)):
         raise TypeError("b must be an integer")
     return int(a) + int(b)
-    
