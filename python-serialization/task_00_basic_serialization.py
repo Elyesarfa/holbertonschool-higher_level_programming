@@ -1,31 +1,22 @@
-#!/usr/bin/env python3
-
 import json
-
 
 def serialize_and_save_to_file(data, filename):
     """
-    Converts a Python dictionary into a serialized format and saves it to a file.
-    :param data: The dictionary to be serialized.
-    :param filename: The name of the file where the serialized data will be stored.
+    Serializes a Python dictionary to a JSON file.
+    
+    :param data: A Python dictionary to be serialized.
+    :param filename: The path to the JSON file where the data will be saved.
     """
-    try:
-        with open(filename, 'w') as json_file:
-            json.dump(data, json_file)
-    except Exception as e:
-        print(f"An error occurred while serializing and saving to file: {e}")
-
+    with open(filename, 'w') as file:
+        json.dump(data, file, indent=4)
 
 def load_and_deserialize(filename):
     """
-    Reads a JSON file and converts its contents into a Python dictionary.
+    Loads and deserializes JSON data from a file into a Python dictionary.
+    
     :param filename: The path to the JSON file to be read.
-    :return: The dictionary resulting from deserializing the JSON data.
+    :return: A Python dictionary containing the deserialized JSON data.
     """
-    try:
-        with open(filename, 'r') as json_file:
-            data = json.load(json_file)
-        return data
-    except Exception as e:
-        print(f"An error occurred while loading : {e}")
-        return None
+    with open(filename, 'r') as file:
+        data = json.load(file)
+    return data
